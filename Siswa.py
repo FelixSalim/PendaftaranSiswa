@@ -63,9 +63,9 @@ def tampilkan_daftar():
 		print("Daftar Masih Kosong, Tolong Masukkan Data Terlebih Dahulu")
 	else:
 		for id_siswa in daftar_siswa:
-			print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-			print("ID:%s\tNama:%s\tNoTelp:%s\tHobi:%s\tEmail:%s\tAlamat:%s\tJurusan: %s\tTanggalLahir:%s\tAsalSekolah:%s\tNilaiUjian:%s\t" % (id_siswa, daftar_siswa[id_siswa]["Nama"][0:5], daftar_siswa[id_siswa]["No_Telp"][2:12], daftar_siswa[id_siswa]["Hobi"][0:7], daftar_siswa[id_siswa]["Email"][0:7], daftar_siswa[id_siswa]["Alamat"][0:7], daftar_siswa[id_siswa]["Jurusan"], daftar_siswa[id_siswa]["Tanggal_Lahir"], daftar_siswa[id_siswa]["Asal_Sekolah"][0:5], daftar_siswa[id_siswa]["Nilai_Ujian"][0:1]))
-			print("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+			print("------------------------------")
+			print("ID:%s\nNama:%s\nNoTelp:%s\nHobi:%s\nEmail:%s\nAlamat:%s\nJurusan:%s\nTanggalLahir:%s\nAsalSekolah:%s\nNilaiUjian:%s\n" % (id_siswa, daftar_siswa[id_siswa]["Nama"], daftar_siswa[id_siswa]["No_Telp"], daftar_siswa[id_siswa]["Hobi"], daftar_siswa[id_siswa]["Email"], daftar_siswa[id_siswa]["Alamat"], daftar_siswa[id_siswa]["Jurusan"], daftar_siswa[id_siswa]["Tanggal_Lahir"], daftar_siswa[id_siswa]["Asal_Sekolah"], daftar_siswa[id_siswa]["Nilai_Ujian"]))
+			print("------------------------------")
 	input("Tekan ENTER untuk kembali ke menu")
 
 def ambilIDdariNama(siswa):
@@ -84,21 +84,9 @@ def tambahkan_data():
 	email = input("Email: ")
 	alamat = input("Alamat: ")
 	jurusan = input("Jurusan(IPA/IPS): ")
-	run = True
-	while run:
-		try:
-			tgl_lahir = int(input("Tanggal Lahir: "))
-			run = False
-		except ValueError:
-			print("Masukkan Angka!!")
+	tgl_lahir = input("Tanggal Lahir: ")
 	bln_lahir = input("Bulan Lahir: ")
-	run = True
-	while run:
-		try:
-			thn_lahir = int(input("Tahun Lahir: "))
-			run = False
-		except ValueError:
-			print("Masukkan Angka!!!")
+	thn_lahir = input("Tahun Lahir: ")
 	asal_sekolah = input("Asal Sekolah: ")
 	run = True
 	while run:
@@ -188,11 +176,12 @@ def cari_dataNama():
 	print("---Cari Data Siswa---")
 	cari = input("Masukkan nama Siswa yang ingin dicari: ")
 	cari = cari.title()
+	hasil = ambilIDdariNama(cari)
 	yakin = input("Tekan Y Untuk Mencari Data\t")
 	if verify(yakin):
 		print("Sedang Mencari Data, Mohon Tunggu Sebentar...")
 		sleep(1)
-		cariNama(cari)
+		carikan(hasil)
 	else:
 		print("Pencarian Dibatalkan")
 	input("Tekan ENTER untuk kembali ke menu awal")
@@ -223,13 +212,14 @@ def hapus_nama():
 	print("---Hapus Data Siswa---")
 	nama = input("Masukkan Nama Siswa yang ingin dihapus: ")
 	nama = nama.title()
-	hasil = ambilIDdariNama(nama)
+	ID = ambilIDdariNama(nama)
+	hasil = carikan(ID)
 	if hasil:
 		yakin = input("Tekan Y Untuk Menghapus Data\t")
 		if verify(yakin):
 			print("Sedang Menghapus Data, Mohon Tunggu Sebentar...")
 			sleep(1)
-			daftar_siswa.pop(hasil)
+			daftar_siswa.pop(ID)
 			save_data_apps()
 			print(f"Data {nama} telah di hapus")
 		else:
