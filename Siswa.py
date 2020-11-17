@@ -249,7 +249,7 @@ def updateNama(student):
 def updateTelp(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Telp Lama\t: {daftar_siswa[student]['No_Telp']}")
+	print(f"Telp Lama\t: {daftar_siswa[ID]['No_Telp']}")
 	new_telp = input("Telp Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -265,7 +265,7 @@ def updateTelp(student):
 def updateHobi(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Hobi Lama\t: {daftar_siswa[student]['Hobi']}")
+	print(f"Hobi Lama\t: {daftar_siswa[ID]['Hobi']}")
 	new_hobi = input("Hobi Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -281,7 +281,7 @@ def updateHobi(student):
 def updateEmail(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Email Lama\t: {daftar_siswa[student]['Email']}")
+	print(f"Email Lama\t: {daftar_siswa[ID]['Email']}")
 	new_email = input("Email Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -297,7 +297,7 @@ def updateEmail(student):
 def updateAlamat(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Alamat Lama\t: {daftar_siswa[student]['Alamat']}")
+	print(f"Alamat Lama\t: {daftar_siswa[ID]['Alamat']}")
 	new_alamat = input("Alamat Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -313,7 +313,7 @@ def updateAlamat(student):
 def updateJurusan(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Jurusan Lama\t: {daftar_siswa[student]['Jurusan']}")
+	print(f"Jurusan Lama\t: {daftar_siswa[ID]['Jurusan']}")
 	new_jurusan = input("Jurusan Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -329,7 +329,7 @@ def updateJurusan(student):
 def updateTglLahir(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Tanggal Lahir Lama\t: {daftar_siswa[student]['Tanggal_Lahir']}")
+	print(f"Tanggal Lahir Lama\t: {daftar_siswa[ID]['Tanggal_Lahir']}")
 	new_tglLahir = input("Tanggal Lahir Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -345,7 +345,7 @@ def updateTglLahir(student):
 def updateAsalSekolah(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Asal Sekolah Lama\t: {daftar_siswa[student]['Asal_Sekolah']}")
+	print(f"Asal Sekolah Lama\t: {daftar_siswa[ID]['Asal_Sekolah']}")
 	new_asalSekolah = input("Asal Sekolah Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
@@ -361,7 +361,7 @@ def updateAsalSekolah(student):
 def updateNilaiUjian(student):
 	ID = ambilIDdariNama(student)
 	print(f"Nama\t: {student}")
-	print(f"Nilai Ujian Terakhir Lama\t: {daftar_siswa[student]['Nilai_Ujian']}")
+	print(f"Nilai Ujian Terakhir Lama\t: {daftar_siswa[ID]['Nilai_Ujian']}")
 	new_nilaiUjian = input("Nilai Ujian Terakhir Baru\t: ")
 	respon = input("Tekan Y untuk memperbarui\t")
 	if verify(respon):
